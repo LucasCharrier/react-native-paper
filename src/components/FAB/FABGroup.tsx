@@ -72,6 +72,11 @@ type Props = {
    */
   style?: StyleProp<ViewStyle>;
   /**
+   * Action container Style for the group. You can use it to pass additional styles if you need.
+   * For example, you can set an additional padding if you have a tab bar at the bottom.
+   */
+  actionContainerStyle: StyleProp<ViewStyle>;
+  /**
    * Style for the FAB. It allows to pass the FAB button styles, such as backgroundColor.
    */
   fabStyle?: StyleProp<ViewStyle>;
@@ -214,6 +219,7 @@ class FABGroup extends React.Component<Props, State> {
       theme,
       style,
       fabStyle,
+      actionContainerStyle,
       visible,
       testID,
     } = this.props;
@@ -257,7 +263,7 @@ class FABGroup extends React.Component<Props, State> {
           />
         </TouchableWithoutFeedback>
         <SafeAreaView pointerEvents="box-none" style={styles.safeArea}>
-          <View pointerEvents={open ? 'box-none' : 'none'}>
+          <View pointerEvents={open ? 'box-none' : 'none'} style={actionContainerStyle}>
             {actions.map((it, i) => (
               <View
                 key={i} // eslint-disable-line react/no-array-index-key
