@@ -261,7 +261,7 @@ class FABGroup extends React.Component<Props, State> {
             {actions.map((it, i) => (
               <View
                 key={i} // eslint-disable-line react/no-array-index-key
-                style={styles.item}
+                style={[styles.item, it.container]}
                 pointerEvents={open ? 'box-none' : 'none'}
               >
                 {it.label && (
