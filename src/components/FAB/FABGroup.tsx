@@ -81,6 +81,10 @@ type Props = {
    */
   fabStyle?: StyleProp<ViewStyle>;
   /**
+   * Style for the Backdrop. It allows to pass the FAB button styles, such as backgroundColor.
+   */
+  backdropStyle?: StyleProp<ViewStyle>;
+  /**
    * @optional
    */
   theme: Theme;
@@ -220,6 +224,7 @@ class FABGroup extends React.Component<Props, State> {
       style,
       fabStyle,
       actionContainerStyle,
+      backdropStyle,
       visible,
       testID,
     } = this.props;
@@ -259,6 +264,7 @@ class FABGroup extends React.Component<Props, State> {
                 opacity: backdropOpacity,
                 backgroundColor: colors.backdrop,
               },
+              ...backdropStyle
             ]}
           />
         </TouchableWithoutFeedback>
