@@ -264,7 +264,7 @@ class FABGroup extends React.Component<Props, State> {
                 opacity: backdropOpacity,
                 backgroundColor: colors.backdrop,
               },
-              ...backdropStyle
+              backdropStyle
             ]}
           />
         </TouchableWithoutFeedback>
